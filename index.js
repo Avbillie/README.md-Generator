@@ -37,6 +37,11 @@ async function createReadMe() {
         name: "contributeGuidelines"
       },
       {
+        type:"input",
+        message:"Please provide a demonstration video or pictures of the project...",
+        name: "demo"
+      },
+      {
         type: "list",
         message:
           "Select a license badge from the following options:",
@@ -64,8 +69,10 @@ async function createReadMe() {
       const { licenseSelection } = data;
       const { gitHubUsername } = data;
       const { email } = data;
+      const { demo } = data
       const gitHubUrl = `[GitHub](https://github.com/${gitHubUsername})`;
       const emailAddress = `[Email](${email})`;
+      const demoVideoorPic = `[Demo](${demo})`
       let license = "";
       let licenseInfo = "";
       const responseArray = [
@@ -121,15 +128,15 @@ async function createReadMe() {
 
       if (licenseSelection == "slide") {
         license =
-          "[!slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)";
+          "[![slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)](http://example.com/your-slides)";
         licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "welcome") {
         license =
-          "[!PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)";
+          "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)";
         licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "Perl") {
         license =
-          "[!License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)";
+          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)";
         licenseInfo = "[Perl](https://opensource.org/licenses/Artistic-2.0)";
       }
 
@@ -169,7 +176,7 @@ ${contributeGuidelines}
 
 ## Tests
 
-[Demo](Test/program-test.mp4)
+${demoVideoorPic}
 
 ## Questions?
 

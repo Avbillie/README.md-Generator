@@ -1,5 +1,5 @@
 
-[!PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)   
+   
 # README.md generator
 
 ## Description
@@ -32,13 +32,15 @@ You will be presented with a series of prompts that will input your responses in
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
+
 
 ## Contributing
 
 Feel free to contribute to this repository, I only ask to keep your work as professional as possible and be respectful of others code.
 
 ## Tests
+
+[Demo](https://youtu.be/baFlWe4giOA)
 
 ## Questions?
 
