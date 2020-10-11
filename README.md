@@ -1,5 +1,5 @@
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)   
+[!PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)   
 # README.md generator
 
 ## Description
@@ -42,7 +42,7 @@ Feel free to contribute to this repository, I only ask to keep your work as prof
 
 ## Questions?
 
-Feel free to email all your questions [Email](anthonybilliejr2021@gmail.com).
+Feel free to email me all your questions [Email](anthonybilliejr2021@gmail.com).
 
 Want to see more? Go to my gitHub account [GitHub](https://github.com/avbillie)!
             

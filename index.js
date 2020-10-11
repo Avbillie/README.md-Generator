@@ -39,8 +39,8 @@ async function createReadMe() {
       {
         type: "list",
         message:
-          "Select a license you want to apply from the following options:",
-        choices: ["slide", "welcome", "IBM"],
+          "Select a license badge from the following options:",
+        choices: ["Slide", "Welcome", "IBM"],
         name: "licenseSelection"
       },
       {
@@ -121,15 +121,15 @@ async function createReadMe() {
 
       if (licenseSelection == "slide") {
         license =
-          "[![slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)";
+          "[!slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)";
         licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "welcome") {
         license =
-          "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)";
+          "[!PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)";
         licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "Perl") {
         license =
-          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)";
+          "[!License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)";
         licenseInfo = "[Perl](https://opensource.org/licenses/Artistic-2.0)";
       }
 
@@ -169,9 +169,11 @@ ${contributeGuidelines}
 
 ## Tests
 
+[Demo](Test/program-test.mp4)
+
 ## Questions?
 
-Feel free to email all your questions ${emailAddress}.\n
+Feel free to email me all your questions ${emailAddress}.\n
 Want to see more? Go to my gitHub account ${gitHubUrl}!
             
 `;
