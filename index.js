@@ -45,7 +45,7 @@ async function createReadMe() {
         type: "list",
         message:
           "Select a license badge from the following options:",
-        choices: ["Slide", "Welcome", "IBM"],
+        choices: ["Made with JavaScript", "Open Source", "Uses js"],
         name: "licenseSelection"
       },
       {
@@ -71,10 +71,8 @@ async function createReadMe() {
       const { email } = data;
       const { demo } = data
       const gitHubUrl = `[GitHub](https://github.com/${gitHubUsername})`;
-      const emailAddress = `[Email](${email})`;
+      const emailAddress = `[Email](mailto:${email}.com?subject=[GitHub]%20Source%20)`;
       const demoVideoorPic = `[Demo](${demo})`
-      let license = "";
-      let licenseInfo = "";
       const responseArray = [
         {
           input: title,
@@ -117,6 +115,7 @@ async function createReadMe() {
           b: "Email link not added to README.md."
         }
       ];
+      
 
       for (i = 0; i < responseArray.length; i++) {
         if (responseArray[i].input != " ") {
@@ -126,22 +125,26 @@ async function createReadMe() {
         }
       }
 
-      if (licenseSelection == "slide") {
-        license =
-          "[![slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)]";
-        licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
-      } else if (licenseSelection == "welcome") {
-        license =
-          "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]";
-        licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
-      } else if (licenseSelection == "Perl") {
-        license =
-          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]";
-        licenseInfo = "[Perl](https://opensource.org/licenses/Artistic-2.0)";
-      }
+      let license = licenseSelection;
+      let badgeSelection = "";
+      let badgeLicense ="";
 
+      if (license == "Made with JavaScript") {
+        badgeSelection=
+          "[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)";
+          badgeLicense = "[FTB](https://forthebadge.com)";
+      } else if (license == "Open Source") {
+        badgeSelection =
+          "[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)";
+          badgeLicense = "[FTB](https://forthebadge.com)";
+      } else if (license == "Uses js") {
+        badgeSelection =
+          "[![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://www.javascript.com/)";
+          badgeLicense = "[FTB](https://forthebadge.com)";
+      }
+      
       const readMe = `
-${license}   
+${badgeSelection}   
 # ${title}
 
 ## Description
@@ -168,7 +171,7 @@ ${usageInfo}
 
 ## License
 
-${licenseInfo}
+${badgeLicense}
 
 ## Contributing
 
@@ -180,7 +183,7 @@ ${demoVideoorPic}
 
 ## Questions?
 
-Feel free to email me all your questions ${email}.\n
+Feel free to email me all your questions ${emailAddress}.\n
 Want to see more? Go to my gitHub account ${gitHubUrl}!
             
 `;

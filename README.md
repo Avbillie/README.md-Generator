@@ -1,5 +1,5 @@
 
-   
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)   
 # README.md generator
 
 ## Description
@@ -32,7 +32,7 @@ You will be presented with a series of prompts that will input your responses in
 
 ## License
 
-
+[FTB](https://forthebadge.com)
 
 ## Contributing
 
@@ -40,11 +40,11 @@ Feel free to contribute to this repository, I only ask to keep your work as prof
 
 ## Tests
 
-[Demo](https://youtu.be/baFlWe4giOA)
+[Demo](https://www.youtube.com/watch?v=baFlWe4giOA)
 
 ## Questions?
 
-Feel free to email me all your questions [Email](anthonybilliejr2021@gmail.com).
+Feel free to email me all your questions [Email](mailto:anthonybilliejr2021@gmail.com.com?subject=[GitHub]%20Source%20).
 
 Want to see more? Go to my gitHub account [GitHub](https://github.com/avbillie)!
             
