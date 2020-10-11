@@ -58,14 +58,16 @@ async function createReadMe() {
 
       const { title } = data;
       const { description } = data;
-      const { instructions } = data;
+      const { instructions } = data + "\n```npm i inquirer```";
       const { usageInfo } = data;
       const { contributeGuidelines } = data;
       const { licenseSelection } = data;
       const { gitHubUsername } = data;
       const { email } = data;
-      const gitHubUrl = `[GitHub](https://github.com/${gitHubUsername})`;
-      const emailAddress = `[Email](${email})`;
+      const gitHubUrl = `
+      Want to see more? Go to my gitHub account [GitHub](https://github.com/${gitHubUsername})!`;
+      const emailAddress = `
+      Feel free to email all your questions [Email](${email}).`;
       let license = "";
       let licenseInfo = "";
       const responseArray = [
@@ -170,8 +172,8 @@ ${contributeGuidelines}
 
 ## Questions?
 
-Feel free to email all your questions to ${emailAddress}.
-Want to see more? Go to my gitHub account ${gitHubUrl}!
+${emailAddress}\n
+${gitHubUrl}
             
 `;
       fs.writeFile("README.md", readMe, function (err) {
