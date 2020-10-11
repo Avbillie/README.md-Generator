@@ -128,15 +128,15 @@ async function createReadMe() {
 
       if (licenseSelection == "slide") {
         license =
-          "[![slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)](http://example.com/your-slides)";
+          "[![slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)]";
         licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "welcome") {
         license =
-          "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)";
+          "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]";
         licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "Perl") {
         license =
-          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)";
+          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]";
         licenseInfo = "[Perl](https://opensource.org/licenses/Artistic-2.0)";
       }
 
@@ -180,7 +180,7 @@ ${demoVideoorPic}
 
 ## Questions?
 
-Feel free to email me all your questions ${emailAddress}.\n
+Feel free to email me all your questions ${email}.\n
 Want to see more? Go to my gitHub account ${gitHubUrl}!
             
 `;
