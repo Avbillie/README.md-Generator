@@ -121,15 +121,15 @@ async function createReadMe() {
 
       if (licenseSelection == "Mozilla") {
         license =
-          "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]";
+          "[License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)";
         licenseInfo = "[Mozilla](https://opensource.org/licenses/MPL-2.0)";
       } else if (licenseSelection == "Perl") {
         license =
-          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)]";
+          "[License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)";
         licenseInfo = "[Perl](https://opensource.org/licenses/Artistic-2.0)";
       } else if (licenseSelection == "IBM") {
         license =
-          "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)]";
+          "[License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)";
         licenseInfo = "[IBM](https://opensource.org/licenses/IPL-1.0)";
       }
 
@@ -143,13 +143,13 @@ ${description}
 
 ## Table of Contents
 
-[1.](#Description)
-[2.](#Installation)
-[3.](#Usage)
-[4.](#License)
-[5.](#Contributing)
-[6.](#Tests)
-[7.](#Questions)
+[1. Description](#Description)
+[2. Installation](#Installation)
+[3. Usage Information](#Usage)
+[4. License](#License)
+[5. Contributing](#Contributing)
+[6. Tests](#Tests)
+[7. Questions](#Questions)
 
 ## Installation
 
@@ -169,10 +169,10 @@ ${contributeGuidelines}
 
 ## Tests
 
-## Questions
+## Questions?
 
-${gitHubUrl}
-${emailAddress}
+Feel free to email all your questions to ${emailAddress}.
+Want to see more? Go to my gitHub account ${gitHubUrl}!
             
 `;
       fs.writeFile("README.md", readMe, function (err) {
