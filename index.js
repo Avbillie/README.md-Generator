@@ -40,7 +40,7 @@ async function createReadMe() {
         type: "list",
         message:
           "Select a license you want to apply from the following options:",
-        choices: ["Mozilla", "Perl", "IBM"],
+        choices: ["slide", "welcome", "IBM"],
         name: "licenseSelection"
       },
       {
@@ -119,18 +119,18 @@ async function createReadMe() {
         }
       }
 
-      if (licenseSelection == "Mozilla") {
+      if (licenseSelection == "slide") {
         license =
-          "[License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)";
-        licenseInfo = "[Mozilla](https://opensource.org/licenses/MPL-2.0)";
+          "[![slides-badge](https://cdn.rawgit.com/kentcdodds/custom-badges/VERSION/badges/slides.svg)";
+        licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
+      } else if (licenseSelection == "welcome") {
+        license =
+          "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)";
+        licenseInfo = "[MIT](https://opensource.org/licenses/MIT)";
       } else if (licenseSelection == "Perl") {
         license =
-          "[License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)";
+          "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)";
         licenseInfo = "[Perl](https://opensource.org/licenses/Artistic-2.0)";
-      } else if (licenseSelection == "IBM") {
-        license =
-          "[License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)";
-        licenseInfo = "[IBM](https://opensource.org/licenses/IPL-1.0)";
       }
 
       const readMe = `
@@ -143,12 +143,12 @@ ${description}
 
 ## Table of Contents
 
-[1. Description](#Description)
-[2. Installation](#Installation)
-[3. Usage Information](#Usage)
-[4. License](#License)
-[5. Contributing](#Contributing)
-[6. Tests](#Tests)
+[1. Description](#Description)\n
+[2. Installation](#Installation)\n
+[3. Usage Information](#Usage)\n
+[4. License](#License)\n
+[5. Contributing](#Contributing)\n
+[6. Tests](#Tests)\n
 [7. Questions](#Questions)
 
 ## Installation
@@ -171,7 +171,7 @@ ${contributeGuidelines}
 
 ## Questions?
 
-Feel free to email all your questions to ${emailAddress}.
+Feel free to email all your questions ${emailAddress}.\n
 Want to see more? Go to my gitHub account ${gitHubUrl}!
             
 `;
