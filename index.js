@@ -292,7 +292,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`
       };
 
       let licenseMd = `[LICENSE.md](/LICENSE.md)`
-      if (license == "Apache 2.0") {
+      if (license == "Apache License 2.0") {
         badgeSelection =
           "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
         badgeLicense =
