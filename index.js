@@ -38,6 +38,7 @@ async function createReadMe() {
         type: "input",
         message: `If there will code for usage guidance please provide it now"...`,
         name: "code"
+        
       },
       {
         type: "input",
@@ -87,13 +88,13 @@ async function createReadMe() {
       const {
         instructions
       } = data;
-      const{
+      const {
         npm
       } = data;
       const {
         usageInfo
       } = data;
-      const{
+      const {
         code
       } = data
       const {
@@ -176,9 +177,9 @@ async function createReadMe() {
       let badgeLicense = "";
 
       let licenseObj = [{
-          name: "Apache 2.0",
+          name: "Apache License 2.0",
           license: `
-# Copyright (C)${year} ${userName}
+# Copyright ${year} ${userName}
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -195,7 +196,7 @@ limitations under the License.`
         {
           name: "MIT License",
           license: `
-# Copyright (C)${year} ${userName}
+# Copyright ${year} ${userName}
 
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Software"), 
@@ -217,7 +218,7 @@ DEALINGS IN THE SOFTWARE.`
         {
           name: "GNU General Public License v3.0",
           license: `
-# Copyright (C)${year} ${userName}
+# Copyright (C) ${year} ${userName}
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -264,30 +265,32 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`
   }
 }`
 
+      for (i = 0; i < licenseObj.length; i++) {
+        if (license == licenseObj[i].name) {
+          fs.writeFile("package.json", jsonPackage, function (err) {
+            if (err) {
+              console.log("package.json not created.");
+              throw err;
+            } else {
+              console.log("package.json created.");
+            }
+          });
 
-      if (license == "Apache 2.0" || license == "MIT License" || license == "GNU General Public License v3.0") {
-        fs.writeFile("package.json", jsonPackage, function (err) {
-          if (err) {
-            console.log("package.json not created.");
-            throw err;
-          } else {
-            console.log("package.json created.");
+          for (i = 0; i < licenseObj.length; i++) {
+            if (license == licenseObj[i].name) {
+              fs.writeFile("LICENSE.md", licenseObj[i].license, function (err) {
+                if (err) {
+                  console.log("LICENSE.md not created.");
+                  throw err;
+                } else {
+                  console.log("LICENSE.md created.");
+                }
+              });
+            }
           }
-        });
-
-        for (i = 0; i < licenseObj.length; i++) {
-          if (license == licenseObj[i].name) {
-            fs.writeFile("LICENSE.md", licenseObj[i].license, function (err) {
-              if (err) {
-                console.log("LICENSE.md not created.");
-                throw err;
-              } else {
-                console.log("LICENSE.md created.");
-              }
-            });
-          }
-        }
+        };
       };
+
       let licenseMd = `[LICENSE.md](/LICENSE.md)`
       if (license == "Apache 2.0") {
         badgeSelection =
