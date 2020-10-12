@@ -1,5 +1,5 @@
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)   
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   
 # README.md generator
 
 ## Description
@@ -36,7 +36,7 @@ You will be presented with a series of prompts that will input your responses in
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the file [LICENSE.md](/LICENSE.md) for details
+This project is licensed under the MIT License - see the file [LICENSE.md](/LICENSE.md) for details
 
 ## Contributing
 
