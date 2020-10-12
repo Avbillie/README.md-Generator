@@ -1,27 +1,29 @@
-{
-  "name": "readme-generator",
-  "version": "1.0.0",
-  "description": "generates a readme file based on user input",
-  "main": "index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Avbillie/README.md-Generator.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Anthony Billie",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/avbillie/README.md-generator/issues"
-  },
-  "homepage": "https://github.com/Avbillie/README.md-Generator.git",
-  "dependencies": {
-    "inquirer": "^6.5.2",
-    "read": "^1.0.7",
-    "repo": "0.0.15"
-  }
-}
+
+      {
+        "name": "readme-generator",
+        "version": "1.0.0",
+        "description": "generates a readme file based on user input",
+        "main": "index.js",
+        "author": "Anthony Billie",
+        "homepage": "https://github.com/Avbillie/README.md-Generator.git",
+        "license": "GNU General Public License v3.0",
+        "publishConfig": {
+          "registry": "https://npm.pkg.github.com/"
+        },
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/Avbillie/README.md-Generator.git"
+        },
+        "scripts": {
+          "test":"echo Error: no test specified && exit 1"
+        },
+        "bugs": {
+          "url": "https://github.com/avbillie/README.md-generator/issues"
+        },
+        "dependencies": {
+          "inquirer": "^6.5.2",
+          "read": "^1.0.7",
+          "repo": "0.0.15"
+        }
+      }
+      

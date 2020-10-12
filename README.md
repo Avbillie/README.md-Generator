@@ -1,5 +1,5 @@
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)   
+"[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)"[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)   
 # README.md generator
 
 ## Description
@@ -32,7 +32,7 @@ You will be presented with a series of prompts that will input your responses in
 
 ## License
 
-[FTB](https://forthebadge.com)
+This project is licensed under GNU General Public License v3.0 - see the  file for details
 
 ## Contributing
 
@@ -44,7 +44,7 @@ Feel free to contribute to this repository, I only ask to keep your work as prof
 
 ## Questions?
 
-Feel free to email me all your questions [Email](mailto:anthonybilliejr2021@gmail.com.com?subject=[GitHub]%20Source%20).
+Feel free to email me all your questions [Email](mailto:anthonybilliejr2021@gmail.com?subject=[GitHub]%20Source%20).
 
 Want to see more? Go to my gitHub account [GitHub](https://github.com/avbillie)!
             

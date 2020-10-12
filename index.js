@@ -5,10 +5,8 @@ createReadMe();
 
 async function createReadMe() {
   await inquirer
-    .prompt([
-      {
-        message:
-          "Welcome to README generator we will use your repository information to begin and finish the process, press enter to continue...",
+    .prompt([{
+        message: "Welcome to README generator we will use your repository information to begin and finish the process, press enter to continue...",
         name: "continue"
       },
       {
@@ -37,15 +35,14 @@ async function createReadMe() {
         name: "contributeGuidelines"
       },
       {
-        type:"input",
-        message:"Please provide a demonstration video or pictures of the project...",
+        type: "input",
+        message: "Please provide a demonstration video or pictures of the project...",
         name: "demo"
       },
       {
         type: "list",
-        message:
-          "Select a license badge from the following options:",
-        choices: ["Made with JavaScript", "Open Source", "Uses js"],
+        message: "Select a license from the following options:",
+        choices: ["Apache License 2.0", "MIT License", "GNU General Public License v3.0"],
         name: "licenseSelection"
       },
       {
@@ -61,20 +58,37 @@ async function createReadMe() {
     ])
     .then(function (data) {
 
-      const { title } = data;
-      const { description } = data;
-      const { instructions } = data;
-      const { usageInfo } = data;
-      const { contributeGuidelines } = data;
-      const { licenseSelection } = data;
-      const { gitHubUsername } = data;
-      const { email } = data;
-      const { demo } = data
+      const {
+        title
+      } = data;
+      const {
+        description
+      } = data;
+      const {
+        instructions
+      } = data;
+      const {
+        usageInfo
+      } = data;
+      const {
+        contributeGuidelines
+      } = data;
+      const {
+        licenseSelection
+      } = data;
+      const {
+        gitHubUsername
+      } = data;
+      const {
+        email
+      } = data;
+      const {
+        demo
+      } = data
       const gitHubUrl = `[GitHub](https://github.com/${gitHubUsername})`;
-      const emailAddress = `[Email](mailto:${email}.com?subject=[GitHub]%20Source%20)`;
+      const emailAddress = `[Email](mailto:${email}?subject=[GitHub]%20Source%20)`;
       const demoVideoorPic = `[Demo](${demo})`
-      const responseArray = [
-        {
+      const responseArray = [{
           input: title,
           a: "Project title succesfully added to README.md!",
           b: "Project title not added README.md."
@@ -115,7 +129,7 @@ async function createReadMe() {
           b: "Email link not added to README.md."
         }
       ];
-      
+
 
       for (i = 0; i < responseArray.length; i++) {
         if (responseArray[i].input != " ") {
@@ -127,24 +141,63 @@ async function createReadMe() {
 
       let license = licenseSelection;
       let badgeSelection = "";
-      let badgeLicense ="";
-
-      if (license == "Made with JavaScript") {
-        badgeSelection=
-          "[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)";
-          badgeLicense = "[FTB](https://forthebadge.com)";
-      } else if (license == "Open Source") {
-        badgeSelection =
-          "[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)";
-          badgeLicense = "[FTB](https://forthebadge.com)";
-      } else if (license == "Uses js") {
-        badgeSelection =
-          "[![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://www.javascript.com/)";
-          badgeLicense = "[FTB](https://forthebadge.com)";
+      let badgeLicense = "";
+      const jsonPackage = `
+      {
+        "name": "readme-generator",
+        "version": "1.0.0",
+        "description": "generates a readme file based on user input",
+        "main": "index.js",
+        "author": "Anthony Billie",
+        "homepage": "https://github.com/Avbillie/README.md-Generator.git",
+        "license": "${licenseSelection}",
+        "publishConfig": {
+          "registry": "https://npm.pkg.github.com/"
+        },
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/Avbillie/README.md-Generator.git"
+        },
+        "scripts": {
+          "test":"echo Error: no test specified && exit 1"
+        },
+        "bugs": {
+          "url": "https://github.com/avbillie/README.md-generator/issues"
+        },
+        "dependencies": {
+          "inquirer": "^6.5.2",
+          "read": "^1.0.7",
+          "repo": "0.0.15"
+        }
       }
-      
+      `
+      fs.writeFile("package.json", jsonPackage, function (err) {
+        if (err) {
+          console.log("package.json license not created.");
+          throw err;
+        } else {
+          console.log("package.json license created.");
+        }
+      });
+
+      if (license == "Apache 2.0") {
+        badgeSelection =
+          "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+
+        badgeLicense =
+          `This project is licensed under the Apache 2.0 License - see the file for details`;
+      } else if (license == "MIT License") {
+        badgeSelection =
+          "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+        badgeLicense = `This project is licensed under the MIT License - see the file for details`;
+      } else if (license == "GNU General Public License v3.0") {
+        badgeSelection =
+          "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+        badgeLicense = `This project is licensed under GNU General Public License v3.0 - see the  file for details`;
+      }
+
       const readMe = `
-${badgeSelection}   
+"[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)"${badgeSelection}   
 # ${title}
 
 ## Description
