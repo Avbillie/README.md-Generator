@@ -1,10 +1,10 @@
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)   
 # README.md generator
 
 ## Description
 
-This program takes user input from a series of prompts and generates a README.md file for thier repository.
+Takes user input from a series of prompts and generates a README.md template along with the user selected license and LICENSE.md file.
 
 ## Table of Contents
 
@@ -24,7 +24,9 @@ This program takes user input from a series of prompts and generates a README.md
 
 ## Installation
 
-Before you run the program make sure to install the inquirer package or you will get a throw error. ``` npm i inquirer ``` 
+Before you run the program make sure to install the inquirer package or you will get a throw error.
+
+``` npm i inquirer ```
 
 ## Usage
 
@@ -32,7 +34,7 @@ You will be presented with a series of prompts that will input your responses in
 
 ## License
 
-This project is licensed under the MIT License - see the file [LICENSE.md]("./assets/LICENSE.md") for details
+This project is licensed under GNU General Public License v3.0 - see the [LICENSE.md](/LICENSE.md) file for details
 
 ## Contributing
 
@@ -40,7 +42,7 @@ Feel free to contribute to this repository, I only ask to keep your work as prof
 
 ## Tests
 
-[Demo](https://www.youtube.com/watch?v=baFlWe4giOA)
+[Demo](https://youtu.be/xmmgJPxsCuw)
 
 ## Questions?
 

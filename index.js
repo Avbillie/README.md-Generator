@@ -26,8 +26,18 @@ async function createReadMe() {
       },
       {
         type: "input",
+        message: `If a package needs to be installed please provide its name "npm i [package name goes here]"...`,
+        name: "npm"
+      },
+      {
+        type: "input",
         message: "Please provide the project usage information...",
         name: "usageInfo"
+      },
+      {
+        type: "input",
+        message: `If there will code for usage guidance please provide it now"...`,
+        name: "code"
       },
       {
         type: "input",
@@ -77,9 +87,15 @@ async function createReadMe() {
       const {
         instructions
       } = data;
+      const{
+        npm
+      } = data;
       const {
         usageInfo
       } = data;
+      const{
+        code
+      } = data
       const {
         contributeGuidelines
       } = data;
@@ -201,7 +217,7 @@ DEALINGS IN THE SOFTWARE.`
         {
           name: "GNU General Public License v3.0",
           license: `
-# Copyright (C) <${year}>  <${userName}>
+# Copyright (C) <${year}> <${userName}>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -272,7 +288,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`
           }
         }
       };
-      let licenseMd = `[LICENSE.md]("LICENSE.md")`
+      let licenseMd = `[LICENSE.md](/LICENSE.md)`
       if (license == "Apache 2.0") {
         badgeSelection =
           "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
@@ -289,7 +305,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`
       }
 
       const readMe = `
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)${badgeSelection}   
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/) ${badgeSelection}   
 # ${title}
 
 ## Description
@@ -308,11 +324,13 @@ ${description}
 
 ## Installation
 
-${instructions}
+${instructions}\n
+${npm}
 
 ## Usage
 
-${usageInfo}
+${usageInfo}\n
+${code}
 
 ## License
 
