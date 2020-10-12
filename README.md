@@ -1,5 +1,5 @@
 
-"[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)"[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)   
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)   
 # README.md generator
 
 ## Description
@@ -32,7 +32,7 @@ You will be presented with a series of prompts that will input your responses in
 
 ## License
 
-This project is licensed under GNU General Public License v3.0 - see the  file for details
+This project is licensed under the MIT License - see the file [LICENSE.md]("./assets/LICENSE.md") for details
 
 ## Contributing
 
