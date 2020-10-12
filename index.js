@@ -178,7 +178,7 @@ async function createReadMe() {
       let licenseObj = [{
           name: "Apache 2.0",
           license: `
-# Copyright <${year}> <${userName}>
+# Copyright (C)${year} ${userName}
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -195,7 +195,7 @@ limitations under the License.`
         {
           name: "MIT License",
           license: `
-# Copyright <${year}> <${userName}>
+# Copyright (C)${year} ${userName}
 
 Permission is hereby granted, free of charge, to any person obtaining a 
 copy of this software and associated documentation files (the "Software"), 
@@ -217,7 +217,7 @@ DEALINGS IN THE SOFTWARE.`
         {
           name: "GNU General Public License v3.0",
           license: `
-# Copyright (C) <${year}> <${userName}>
+# Copyright (C)${year} ${userName}
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
