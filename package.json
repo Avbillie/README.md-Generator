@@ -6,7 +6,7 @@
   "main": "index.js",
   "author": "Anthony Billie",
   "homepage": "https://github.com/Avbillie/README.md-Generator.git",
-  "license": "MIT License",
+  "license": "GNU General Public License v2.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

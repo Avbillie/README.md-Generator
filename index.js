@@ -36,9 +36,9 @@ async function createReadMe() {
       },
       {
         type: "input",
-        message: `If there will code for usage guidance please provide it now"...`,
+        message: "If there will code for usage guidance please provide it now...",
         name: "code"
-        
+
       },
       {
         type: "input",
@@ -53,8 +53,17 @@ async function createReadMe() {
       {
         type: "list",
         message: "Select a license from the following options:",
-        choices: ["Apache License 2.0", "MIT License", "GNU General Public License v3.0"],
+        choices: ["Apache License 2.0", "MIT License", "GNU General Public License v2.0"],
         name: "licenseSelection"
+      },
+      {
+        type: "list",
+        message: "Select the scripting language that was mostly used from the following options:",
+        choices: [
+          `JavaScript`, `Python`, `Ruby`, `HTML/CSS`,
+          `Java`, `Julia`, `C++`, `C`, `Swift`, `Rust`
+        ],
+        name: "languageSelection"
       },
       {
         type: "input",
@@ -78,7 +87,6 @@ async function createReadMe() {
       },
     ])
     .then(function (data) {
-
       const {
         title
       } = data;
@@ -104,6 +112,9 @@ async function createReadMe() {
         licenseSelection
       } = data;
       const {
+        languageSelection
+      } = data;
+      const {
         gitHubUsername
       } = data;
       const {
@@ -111,74 +122,72 @@ async function createReadMe() {
       } = data;
       const {
         demo
-      } = data
+      } = data;
       const {
         year
       } = data;
       const {
         userName
-      } = data
+      } = data;
       const gitHubUrl = `[GitHub](https://github.com/${gitHubUsername})`;
       const emailAddress = `[Email](mailto:${email}?subject=[GitHub]%20Source%20)`;
-      const demoVideoorPic = `[Demo](${demo})`
-      const responseArray = [{
-          input: title,
-          a: "Project title succesfully added to README.md!",
-          b: "Project title not added README.md."
+      const demoVideoorPic = `[Demo](${demo})`;
+      let language = languageSelection;
+      let license = licenseSelection;
+      let languageBadge = "";
+      let languageBadgeObj = [{
+          name: `JavaScript`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)`
         },
         {
-          input: description,
-          a: "Project description succesfully added to README.md!",
-          b: "Project description not added README.md."
+          name: `Python`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)`
         },
         {
-          input: instructions,
-          a: "Project instructions succesfully added to README.md!",
-          b: "Project instructions not added README.md."
+          name: `Ruby`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://www.ruby-lang.org/en/)`
         },
         {
-          input: usageInfo,
-          a: "Project usage information succesfully added to README.md!",
-          b: "Project usage information not added README.md."
+          name: `HTML/CSS`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)`
         },
         {
-          input: contributeGuidelines,
-          a: "Project contribution guidelines succesfully added to README.md!",
-          b: "Project contribution guidelines not added README.md."
+          name: `Java`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://www.java.com/en/)`
         },
         {
-          input: licenseSelection,
-          a: "Project license succesfully added to README.md!",
-          b: "Project license not added README.md."
+          name: `Julia`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-julia.svg)](https://julialang.org/)`
         },
         {
-          input: gitHubUsername,
-          a: "GitHub link succesfully added to README.md!",
-          b: "GitHub link not added README.md."
+          name: `C++`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://www.cprogramming.com/)`
         },
         {
-          input: email,
-          a: "Email link succesfully added to README.md!",
-          b: "Email link not added to README.md."
+          name: `C`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://www.cprogramming.com/)`
+        },
+        {
+          name: `Swift`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-swift.svg)](https://swift.org/)`
+        },
+        {
+          name: `Rust`,
+          badge: `[![forthebadge](https://forthebadge.com/images/badges/made-with-rust.svg)](https://www.rust-lang.org/)`
         }
       ];
-
-
-      for (i = 0; i < responseArray.length; i++) {
-        if (responseArray[i].input != " ") {
-          console.log(responseArray[i].a);
+      for (i = 0; i < languageBadgeObj.length; i++) {
+        if (language == languageBadgeObj[i].name) {
+          languageBadge = languageBadgeObj[i].badge;
+          console.log("Language badge added to README.md")
+          break;
         } else {
-          console.log(responseArray[i].b);
+          console.log("Language badge not added to README.md")
         }
-      }
-
-      let license = licenseSelection;
-      let badgeSelection = "";
-      let badgeLicense = "";
-
+      };
       let licenseObj = [{
           name: "Apache License 2.0",
-          license: `
+          copyright: `
 # Copyright ${year} ${userName}
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -191,11 +200,12 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.`
+limitations under the License.`,
+          badge: `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
         },
         {
           name: "MIT License",
-          license: `
+          copyright: `
 # Copyright ${year} ${userName}
 
 Permission is hereby granted, free of charge, to any person obtaining a 
@@ -213,11 +223,12 @@ INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PA
 PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
 FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-DEALINGS IN THE SOFTWARE.`
+DEALINGS IN THE SOFTWARE.`,
+          badge: `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
         },
         {
-          name: "GNU General Public License v3.0",
-          license: `
+          name: "GNU General Public License v2.0",
+          copyright: `
 # Copyright (C) ${year} ${userName}
 
 This program is free software: you can redistribute it and/or modify
@@ -231,11 +242,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.`
+along with this program.  If not, see <https://www.gnu.org/licenses/>.`,
+          badge: `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
         }
       ];
-
-
       const jsonPackage = `
 {
   "name": "readme-generator",
@@ -265,8 +275,14 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`
   }
 }`
 
+
       for (i = 0; i < licenseObj.length; i++) {
         if (license == licenseObj[i].name) {
+          let licenseMd = `[LICENSE.md](/LICENSE.md)`;
+          let copyrightBadge = licenseObj[i].badge;
+          let badgeLicense = `This project is licensed under the ${licenseObj[i].name} - see the file ${licenseMd} for details`;
+          console.log("Copyright badge added to README.md")
+
           fs.writeFile("package.json", jsonPackage, function (err) {
             if (err) {
               console.log("package.json not created.");
@@ -275,40 +291,16 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`
               console.log("package.json created.");
             }
           });
-
-          for (i = 0; i < licenseObj.length; i++) {
-            if (license == licenseObj[i].name) {
-              fs.writeFile("LICENSE.md", licenseObj[i].license, function (err) {
-                if (err) {
-                  console.log("LICENSE.md not created.");
-                  throw err;
-                } else {
-                  console.log("LICENSE.md created.");
-                }
-              });
+          fs.writeFile("LICENSE.md", licenseObj[i].copyright, function (err) {
+            if (err) {
+              console.log("LICENSE.md not created.");
+              throw err;
+            } else {
+              console.log("LICENSE.md created.");
             }
-          }
-        };
-      };
-
-      let licenseMd = `[LICENSE.md](/LICENSE.md)`
-      if (license == "Apache License 2.0") {
-        badgeSelection =
-          "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
-        badgeLicense =
-          `This project is licensed under the Apache 2.0 License - see the file ${licenseMd} for details`;
-      } else if (license == "MIT License") {
-        badgeSelection =
-          "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-        badgeLicense = `This project is licensed under the MIT License - see the file ${licenseMd} for details`;
-      } else if (license == "GNU General Public License v3.0") {
-        badgeSelection =
-          "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
-        badgeLicense = `This project is licensed under GNU General Public License v3.0 - see the ${licenseMd} file for details`;
-      }
-
-      const readMe = `
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/) ${badgeSelection}   
+          });
+          const readMe = `
+${languageBadge} ${copyrightBadge}   
 # ${title}
 
 ## Description
@@ -353,13 +345,63 @@ Feel free to email me all your questions ${emailAddress}.\n
 Want to see more? Go to my gitHub account ${gitHubUrl}!
             
 `;
-      fs.writeFile("README.md", readMe, function (err) {
-        if (err) {
-          console.log("README.md not created.");
-          throw err;
-        } else {
-          console.log("README.md created.");
+          let responseObj = [{
+              input: title,
+              a: "Project title succesfully added to README.md!",
+              b: "Project title not added README.md."
+            },
+            {
+              input: description,
+              a: "Project description succesfully added to README.md!",
+              b: "Project description not added README.md."
+            },
+            {
+              input: instructions,
+              a: "Project instructions succesfully added to README.md!",
+              b: "Project instructions not added README.md."
+            },
+            {
+              input: usageInfo,
+              a: "Project usage information succesfully added to README.md!",
+              b: "Project usage information not added README.md."
+            },
+            {
+              input: contributeGuidelines,
+              a: "Project contribution guidelines succesfully added to README.md!",
+              b: "Project contribution guidelines not added README.md."
+            },
+            {
+              input: licenseSelection,
+              a: "Project license succesfully added to README.md!",
+              b: "Project license not added README.md."
+            },
+            {
+              input: gitHubUsername,
+              a: "GitHub link succesfully added to README.md!",
+              b: "GitHub link not added README.md."
+            },
+            {
+              input: email,
+              a: "Email link succesfully added to README.md!",
+              b: "Email link not added to README.md."
+            }
+          ];
+          for (i = 0; i < responseObj.length; i++) {
+            if (responseObj[i].input != " ") {
+              console.log(responseObj[i].a);
+            } else {
+              console.log(responseObj[i].b);
+            }
+          };
+          fs.writeFile("README.md", readMe, function (err) {
+            if (err) {
+              console.log("README.md not created.");
+              throw err;
+            } else {
+              console.log("README.md created.");
+            }
+          });
         }
-      });
+      };
     });
 }

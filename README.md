@@ -32,11 +32,9 @@ Before you run the program make sure to install the inquirer package or you will
 
 You will be presented with a series of prompts that will input your responses into the designated sections of the readme.md file.
 
-
-
 ## License
 
-This project is licensed under the MIT License - see the file [LICENSE.md](/LICENSE.md) for details
+This project is licensed under the GNU General Public License v2.0 - see the file [LICENSE.md](/LICENSE.md) for details
 
 ## Contributing
 
@@ -44,7 +42,7 @@ Feel free to contribute to this repository, I only ask to keep your work as prof
 
 ## Tests
 
-[Demo](https://youtu.be/xmmgJPxsCuw)
+[Demo](https://www.youtube.com/watch?v=xmmgJPxsCuw&t=17s)
 
 ## Questions?
 
