@@ -26,7 +26,7 @@ Takes user input from a series of prompts and generates a README.md template alo
 
 Before you run the program make sure to install the inquirer package or you will get a throw error.
 
-``` npm i inquirer ```
+``` npm inquirer ```
 
 ## Usage
 

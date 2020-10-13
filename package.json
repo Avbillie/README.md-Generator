@@ -1,24 +1,24 @@
 
 {
-  "name": "readme-generator",
+  "name": "README.md generator",
   "version": "1.0.0",
-  "description": "generates a readme file based on user input",
+  "description": "Takes user input from a series of prompts and generates a README.md template along with the user selected license and LICENSE.md file.",
   "main": "index.js",
-  "author": "Anthony Billie",
-  "homepage": "https://github.com/Avbillie/README.md-Generator.git",
+  "author": "Anthony V. Billie",
+  "homepage": "https://github.com/avbillie/README.md generator.git",
   "license": "MIT License",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Avbillie/README.md-Generator.git"
+    "url": "git+https://github.com/avbillie/README.md generator.git"
   },
   "scripts": {
     "test":"echo Error: no test specified && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/avbillie/README.md-generator/issues"
+    "url": "https://github.com/avbillie/README.md generator/issues"
   },
   "dependencies": {
     "inquirer": "^6.5.2",

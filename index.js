@@ -11,17 +11,17 @@ async function createReadMe() {
       },
       {
         type: "input",
-        message: "Enter your project title...",
+        message: "Enter your repository title...",
         name: "title"
       },
       {
         type: "input",
-        message: "Please give your project a description...",
+        message: "Please provide a description for the repository...",
         name: "description"
       },
       {
         type: "input",
-        message: "Please provide the project installation instructions...",
+        message: "Please provide the installation instructions...",
         name: "instructions"
       },
       {
@@ -31,7 +31,7 @@ async function createReadMe() {
       },
       {
         type: "input",
-        message: "Please provide the project usage information...",
+        message: "Please provide the usage information...",
         name: "usageInfo"
       },
       {
@@ -47,7 +47,7 @@ async function createReadMe() {
       },
       {
         type: "input",
-        message: "Please provide a demonstration video or pictures of the project...",
+        message: "Please provide a demonstration video or pictures...",
         name: "demo"
       },
       {
@@ -248,25 +248,25 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.`,
       ];
       const jsonPackage = `
 {
-  "name": "readme-generator",
+  "name": "${title}",
   "version": "1.0.0",
-  "description": "generates a readme file based on user input",
+  "description": "${description}",
   "main": "index.js",
-  "author": "Anthony Billie",
-  "homepage": "https://github.com/Avbillie/README.md-Generator.git",
+  "author": "${userName}",
+  "homepage": "https://github.com/${gitHubUsername}/${title}.git",
   "license": "${licenseSelection}",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Avbillie/README.md-Generator.git"
+    "url": "git+https://github.com/${gitHubUsername}/${title}.git"
   },
   "scripts": {
     "test":"echo Error: no test specified && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/avbillie/README.md-generator/issues"
+    "url": "https://github.com/${gitHubUsername}/${title}/issues"
   },
   "dependencies": {
     "inquirer": "^6.5.2",
